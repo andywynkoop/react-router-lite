@@ -1,0 +1,23 @@
+{
+  "name": "react-router-lite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andywynkoop/react-router-lite.git"
+  },
+  "author": "Andy Wynkoop",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andywynkoop/react-router-lite/issues"
+  },
+  "homepage": "https://github.com/andywynkoop/react-router-lite#readme",
+  "dependencies": {
+    "react-lite": "file:../ReactLite",
+    "url-pattern": "^1.0.3"
+  }
+}
