@@ -8,11 +8,14 @@ export class HashRouter extends Component {
     this.routes = routes;
     this.routes.push(this);
     this.broadcastHashChange = this.broadcastHashChange.bind(this);
-    window.location.replace('/#/');
+    if (!window.location.hash.includes("#")) {
+      window.location.replace('/#/');
+    }
     window.addEventListener('hashchange', this.broadcastHashChange);
     this.state = {
       urlPath: "/"
     }
+    
   }
   onHashChange(urlPath) {
     this.setState({ urlPath });
@@ -37,7 +40,7 @@ export class Route extends Component {
     super(props);
     routes.push(this);
     this.pattern = new UrlPattern(this.props.path);
-    this.state = { urlPath: '/' }
+    this.state = { urlPath: window.location.hash.split('#')[1] };
     this.onHashChange = this.onHashChange.bind(this);
     this.history = {
       push: path => window.location.replace(`/#${path}`)
